@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F6">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#1A237E">
+
+        <TextView
+            android:id="@+id/tvScanStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scanning..."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Progress Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#1A237E"
+                android:progressBackgroundTint="#E0E0E0"/>
+
+            <TextView
+                android:id="@+id/tvScanning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preparing scan..."
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 / 0"
+                android:textColor="#757575"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Threats Found Counter -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvThreatsFound"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Threats found: 0"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvScanned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#757575"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <!-- Threats RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvThreats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false"/>
+
+    <!-- Result Card (shown on complete) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:margin="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#E8F5E9"
+        app:cardElevation="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:text="✅ Scan complete"
+            android:textColor="#1B5E20"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Action Button -->
+    <Button
+        android:id="@+id/btnAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:margin="16dp"
+        android:text="Cancel"
+        android:backgroundTint="#1A237E"/>
+
+</LinearLayout>

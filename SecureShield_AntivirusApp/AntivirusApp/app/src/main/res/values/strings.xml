@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SecureShield</string>
+    <string name="scan_apps">Scan Apps</string>
+    <string name="scan_files">Scan Files</string>
+    <string name="permission_checker">Permission Checker</string>
+    <string name="real_time_protection">Real-Time Protection</string>
+    <string name="threat_found">Threat Found</string>
+    <string name="device_clean">Device is Clean</string>
+    <string name="scanning">Scanning...</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+</resources>
